@@ -1,0 +1,94 @@
+#include<iostream>
+#include<stdio.h>
+#define MAX 5
+
+using namespace std;
+
+int STACK[MAX], TOP;
+
+void initStack() {
+	TOP = -1;
+}
+
+int isEmpty() {
+	if (TOP == -1) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+int isFull() {
+	if (TOP == MAX - 1) {
+		return 1;
+	}
+	else {
+		return 0;
+	}
+}
+
+void push(int num) {
+	if (isFull()) {
+		cout << "Stack is Full"<<endl;
+		return;
+	}
+	++TOP;
+	STACK[TOP] = num;
+	cout << num << " has been inserted" << endl;
+}
+void display() {
+	int i;
+	if (isEmpty()) {
+		cout << "Stack is empty" << endl;
+		return;
+	}
+	for (i = TOP; i>=0; i--) {
+		cout << STACK[i]<<" ";
+		return;
+	}
+	cout << endl;
+}
+
+void pop() {
+	int temp;
+	if (isEmpty()) {
+		cout << "Stack is Empty";
+		return;
+	}
+	temp = STACK[TOP];
+	TOP--;
+	cout << temp << " has been deleted";
+}
+
+int main() {
+	int num;
+	initStack();
+	char ch;
+	do {
+		int a;
+		cout << "Choose \n 1.Push\n" << "2.Pop\n" << "3.Display\n" << endl;
+		cout << "Please Enter your Choice:" << endl;
+		cin >> a;
+		switch (a) {
+		case 1: 
+			cout << "Enter an integer number:";
+			cin >> num;
+			push(num);
+			break;
+		case 2:
+			pop();
+			break;
+		case 3:
+			display();
+			break;
+
+		default:
+			cout << "Invalid input";
+		}
+
+		cout << "Do you want to continue";
+		cin >> ch;
+	} while ((ch == 'Y') || (ch == 'y'));
+	return 0;
+}
