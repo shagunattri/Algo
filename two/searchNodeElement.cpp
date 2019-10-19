@@ -22,35 +22,30 @@ public:
 
     void addNode(int no)
     {
-        node *tmp = new node;
-        tmp->data = no;
-        tmp->next = NULL;
+        node *temp = new node;
+        temp->data = no;
+        temp->next = NULL;
         if (head == NULL)
         {
-            head = tmp;
-            tail = tmp;
+            head = temp;
+            tail = temp;
         }
         else
         {
-            tail->next = tmp;
+            tail->next = temp;
             tail = tail->next;
         }
     }
 
-    node *gethead()
+    void display()
     {
-        return head;
-    }
-    void display(node *head)
-    {
-        if (head = NULL)
+        node *temp;
+        temp = head;
+        cout << "Elements are:" << endl;
+        while (temp != NULL)
         {
-            cout << "NULL" << endl;
-        }
-        else
-        {
-            cout << head->data << endl;
-            display(head->next);
+            cout << temp->data;
+            temp = temp->next;
         }
     }
 };
@@ -58,8 +53,10 @@ public:
 int main()
 {
     ll a;
-    a.addNode(2);
-    a.addNode(3);
+    int num;
+    cout << "enter Number:";
+    cin >> num;
+    a.addNode(num);
     a.display();
     return 0;
 }
