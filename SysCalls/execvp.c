@@ -4,9 +4,9 @@ int main() {
 
     char *args[] = {"head","-2","f1",NULL};
 
-    printf("Transfer to execv function \n");
+    printf("Transfer to execvp function \n");
 
-    execv("/usr/bin/head",args);
+    execvp("head",args);
     
     printf("This line will not execute \n");
     printf("Hello World!");
