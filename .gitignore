@@ -1,1 +1,2 @@
-.gitmodules
+*.gitmodules
+*.vscode
