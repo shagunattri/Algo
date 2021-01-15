@@ -2,6 +2,9 @@
 
 A curated repository for various algorithm implementations in C/C++.
 
+Algorithms need to have
+- Correctness
+- Efficiency
 
 ## Contributing
 
